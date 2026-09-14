@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class MatrixSumTask {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[][] matrix = new int[3][3];
+
+        // Ask the user to enter a 3 x 3 matrix (9 values)
+        System.out.println("Enter 9 values for the 3x3 matrix:");
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                System.out.print("Enter value for position [" + row + "][" + col + "]: ");
+                matrix[row][col] = scanner.nextInt();
+            }
+        }
+
+        // Display the matrix in tabular form
+        System.out.println("\nThe matrix is:");
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                System.out.print(matrix[row][col] + "\t");
+            }
+            System.out.println();
+        }
+
+        // Calculate and display the sum of all elements
+        int sum = 0;
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                sum += matrix[row][col];
+            }
+        }
+
+        System.out.println("\nSum of all elements: " + sum);
+
+        scanner.close();
+    }
+}
